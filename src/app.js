@@ -15,19 +15,6 @@ var app = {
     options: ['One', 'Two']
 }
 
-// Display subtitle and its p only if it does exist
-var templateTwo = (
-    <div>
-        <h1>{app.title}</h1>
-        {app.subtitle && <p>{app.subtitle}</p>} 
-        <p>{app.title.length > 0 ? 'Here are your options:' : 'No options'}</p>
-        <ol>
-            <li>Item one</li>
-            <li>Item two</li>
-        </ol>
-    </div>
-);
-
 
 
 function getLocation(location) {
@@ -48,13 +35,53 @@ var template = (
 );
 
 
+// Display subtitle and its p only if it does exist
+var templateTwo = (
+    <div>
+        <h1>{app.title}</h1>
+        {app.subtitle && <p>{app.subtitle}</p>} 
+        <p>{app.title.length > 0 ? 'Here are your options:' : 'No options'}</p>
+        <ol>
+            <li>Item one</li>
+            <li>Item two</li>
+        </ol>
+    </div>
+);
 
 
+let count = 0;
+const addOne = () => {
+    count++;
+    renderCounterApp();
+}
+const minusOne = () => {
+    count--;
+    renderCounterApp();
+}
+const reset = () => {
+    count = 0;
+    renderCounterApp();
+}
 
 
 //true ? 'Yes' : 'No'
 // Prints Yes, because true = true
 
-var appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+
+const renderCounterApp = () => {
+    const templateThree = (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={addOne}>+1</button>
+            <button onClick={minusOne}>-1</button>
+            <button onClick={reset}>Reset</button>
+        </div>
+    );
+
+    ReactDOM.render(templateThree, appRoot);
+
+};
+
+renderCounterApp();
