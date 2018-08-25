@@ -11,3 +11,6 @@ npm-debug.log
 # VSCode
 .vscode
 .vs/
+
+# React
+.react-playground/
