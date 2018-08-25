@@ -12,12 +12,6 @@ const reset = () => {
     renderCounterApp();
 }
 
-
-//true ? 'Yes' : 'No'
-// Prints Yes, because true = true
-
-
-
 const renderCounterApp = () => {
     const templateThree = (
         <div>
