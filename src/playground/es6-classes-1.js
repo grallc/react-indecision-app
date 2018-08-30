@@ -56,7 +56,7 @@ class Traveler extends Person {
 
 
 const me = new Traveler('Corentin Grall', 17, 'Nantes, France');
-console.log(me.getGretting());
+console.log(me.getGretting(gr));
 
 const other = new Student();
 console.log(other.getDescription());
